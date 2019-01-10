@@ -5,6 +5,7 @@ $(document).ready(function() {
   var score = 0;
   var miss = 0;
   var clicks = 0;
+  var time;
   generateIndexes();
   insertDivs();
 
@@ -36,6 +37,7 @@ $(document).ready(function() {
       $('#'+code2.id).remove();
       score += 2;
       $('#score').html(score);
+      endGame();
     } else {
       console.log('aaa');
       $('.card').removeClass('flipped');
@@ -100,7 +102,7 @@ $(document).ready(function() {
     var i = 0;
     var m = 0;
     var h = 0;
-    setInterval(function() {
+    time = setInterval(function() {
       if(i == 59) {
         i = 0;
         $('#sec').html(checkDigits(i));
@@ -108,7 +110,7 @@ $(document).ready(function() {
           m = 0;
           h += 1;
           $('#min').html(checkDigits(m));
-          $('#min').html(checkDigits(h));
+          $('#hour').html(checkDigits(h));
         } else {
           m += 1;
           $('#min').html(checkDigits(m));
@@ -144,4 +146,27 @@ $(document).ready(function() {
       $('#score').html(score);
     }, timeout);
   }
+
+  function endGame() {
+    if($('.card').length == 0) {
+      let message = '<div id="message_area"><h2 class="message">Game Over! Your Score is: ' +score+ '</h2><h4 class="message">Click here to play again: <button class="play-btn" onclick="return playAgain()">Play Again</button></h4></div>';
+      $('#main-container').html(message);
+      score = 0;
+      miss = 0;
+      clicks = 0;
+      clearTimeout(time);
+      $('#sec').html('');
+      $('#min').html('');
+      $('#hour').html('');
+      $('#score').html('');
+      $('#miss').html('');
+    }
+  }
+
+  $(document).on('click', '.play-btn', function(e) {
+    e.preventDefault();
+    $('#message_area').remove();
+    generateIndexes();
+    insertDivs();
+  });
 });
