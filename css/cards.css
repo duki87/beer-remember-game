@@ -1,0 +1,105 @@
+.header {
+  width: 80%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: orange;
+  padding: 5px;
+}
+
+.header #message {
+  font-size: 3em;
+  text-align: center;
+  font-family: arial;
+}
+
+.header .h6 {
+  font-size: 1.5em;
+  text-align: center;
+  font-family: arial;
+}
+
+#main-container {
+  width: 80%;
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: skyblue;
+  padding: 0.750em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-container {
+    width: 200px;
+    height: 260px;
+    position: relative;
+    border: 1px solid #ccc;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+.card div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.card .front {
+  background-image: url('../img/mug.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130% auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.card .back {
+  background: white;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+.card-img {
+  display: block;
+}

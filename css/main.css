@@ -1,0 +1,55 @@
+.header {
+  width: 80%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: orange;
+  padding: 5px;
+  font-size: 5em;
+  text-align: center;
+  font-family: arial;
+}
+
+.main-container {
+  width: 80%;
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: skyblue;
+  padding: 0.750em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  width: 9em;
+  height: 15em;
+  margin: 0.625em;
+  padding: 1.250em;
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: 5px 5px #000000;
+}
+
+.card-back {
+
+}
+
+.card-flip {
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    width: 5em;
+    height: 4em;
+    margin: 0.625em;
+    padding: 1.250em;
+    background-color: grey;
+  }
+
+}
