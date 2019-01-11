@@ -87,8 +87,8 @@ $(document).ready(function() {
     for(let j=0; j<10; j++) {
       let random = Math.floor(Math.random() * 1000);
       let id = 'id'+random;
-      let div = '<div class="card-container"><div class="card" id="'+id+'-1'+'" data-random="'+random+'"><div class="front">Click</div><div class="back"><img src="img/'+imgArray[j]+'"></div></div></div>';
-      let div2 = '<div class="card-container"><div class="card" id="'+id+'-2'+'" data-random="'+random+'"><div class="front">Click to</div><div class="back"><img class="card-img" src="img/'+imgArray[j]+'"></div></div></div>';
+      let div = '<div class="card-container"><div class="card" id="'+id+'-1'+'" data-random="'+random+'"><div class="front">Click</div><div class="back"><img class="card-img" src="img/'+imgArray[j]+'"></div></div></div>';
+      let div2 = '<div class="card-container"><div class="card" id="'+id+'-2'+'" data-random="'+random+'"><div class="front">Click</div><div class="back"><img class="card-img" src="img/'+imgArray[j]+'"></div></div></div>';
       divArray.push(div);
       divArray.push(div2);
     }
@@ -154,10 +154,13 @@ $(document).ready(function() {
       score = 0;
       miss = 0;
       clicks = 0;
+      i = 0;
+      m = 0;
+      h = 0;
       clearTimeout(time);
-      $('#sec').html('');
-      $('#min').html('');
-      $('#hour').html('');
+      $('#sec').html('00');
+      $('#min').html('00');
+      $('#hour').html('00');
       $('#score').html('');
       $('#miss').html('');
     }
